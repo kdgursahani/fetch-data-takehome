@@ -1,4 +1,5 @@
 import json
+import sys
 import os
 from subprocess import run, PIPE
 import psycopg2
@@ -78,7 +79,7 @@ def delete_message(queue_url, receipt_handle):
 if __name__ == "__main__":
 
     # Example usage
-    queue_url = 'http://localhost:4566/000000000000/login-queue'  
+    queue_url = sys.argv[0] 
     # Adjust the queue name based on your LocalStack configuration
 
     # Read from SQS queue
