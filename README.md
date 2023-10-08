@@ -27,10 +27,14 @@ python ./sqs_read_mask.py "http://localhost:4566/000000000000/login-queue"
 docker-compose down
 ```
 ## Q and A ##
+4. How can PII be recovered later on?
+```
+Since base64 encoding is reversible, creating a script that reads from the user_logins table in the Postgres database and unmasks the masked_ip and masked_device_id fields to their original value would be possible. Eventually, this script can be made available to analysts, with the appropriate permissions, to execute and achieve the desired results.
+```
 5. What are the assumptions you made?
 ```
 Local Development Environment: The provided instructions assume a local development environment using Docker and local instances of AWS SQS and Postgres.
 AWS CLI and Localstack: Assumed the availability of the AWS CLI and Localstack for local testing.
-Simplified PII Masking: The PII masking logic is simplified for demonstration purposes. In a real-world scenario, we should probably consider more sophisticated PII masking techniques.
+Simplified PII Masking: The PII masking logic is simplified for demonstration purposes. We should probably consider more sophisticated PII masking techniques in a real-world scenario.
 ```
 
