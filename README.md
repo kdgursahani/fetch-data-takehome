@@ -1,5 +1,5 @@
 ## Fetch Data Engineering Take-Home Assessment ##
-This application is designed to process user login behavior data from an AWS SQS queue, mask sensitive information, and store the results in a Postgres database. The application uses Docker containers for local development and testing, and is currently designed for local testing and deployment. This document consists of the prerequisites for this application to run successfully locally, steps to run this application, and answers questions pertaining to selecting the right deployment tools, addressing potential challenges, and ensuring that the deployment aligns with organizational policies and best practices.
+This application is designed to process user login behavior data from an AWS SQS queue, mask sensitive information, and store the results in a Postgres database. The application uses Docker containers for local development and testing, and is currently designed for local testing and deployment. This document consists of the prerequisites for this application to run successfully locally, the steps to run this application, and answers questions pertaining to selecting the right deployment tools, addressing potential challenges, and ensuring that the deployment aligns with organizational policies and best practices.
 
 This project is the solution for the Data Engineering assignment.
 
@@ -32,7 +32,7 @@ docker-compose down
 ## Q and A ##
 1. How would you deploy this application in production?
  - Ensure that the decoding of the base64 encoding retrieves the correct values for the IP and device_id fields.
- - Within our development stage, we can investigate whether there are any tables negatively affected by the creation of the user_logins table. 
+ - Within our development stage, we can investigate whether there are any tables negatively affected by the this creation of the user_logins table. 
  - We should discuss with internal stakeholders to which this data is valuable, to understand its frequency of usage.
  - Kubernetes excels at orchestrating containers, providing a consistent environment for deploying, scaling, and managing containerized applications.
 Since the application is containerized or can be containerized, Kubernetes simplifies deployment and ensures consistent behavior across different environments.
