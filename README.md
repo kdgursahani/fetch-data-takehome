@@ -1,11 +1,14 @@
 ## Fetch Data Engineering Take-Home Assessment ##
 This application is designed to process user login behavior data from an AWS SQS queue, mask sensitive information, and store the results in a Postgres database. The application uses Docker containers for local development and testing, and is currently designed for local testing and deployment. This document consists of the prerequisites for this application to run successfully locally, steps to run this application, and answers questions pertaining to selecting the right deployment tools, addressing potential challenges, and ensuring that the deployment aligns with organizational policies and best practices.
 
-This project is the solution for the Data Engineering assignment given in the below link:
-https://fetch-hiring.s3.amazonaws.com/data-engineer/pii-masking.pdf
+This project is the solution for the Data Engineering assignment.
 
 ## Pre-requisites ##
-Installation of Docker, docker-compose, awscli-local, and psql.
+Installation of :
+- Docker
+- docker-compose
+- awscli-local 
+- psql
 
 ## Steps to run the application ##
 
@@ -31,8 +34,8 @@ docker-compose down
 ```
 Since base64 encoding is reversible, creating a script that reads from the user_logins table in the Postgres
 database and unmasking the masked_ip and masked_device_id fields to their original value would be possible. 
-Eventually, this script can be made available to analysts with the appropriate permissions, 
-to execute and achieve the desired results.
+Eventually, this script can be made available to analysts with the appropriate permissions, to execute and
+achieve the desired results.
 ```
 5. What are the assumptions you made?
 ```
