@@ -42,6 +42,7 @@ Since the application is containerized or can be containerized, Kubernetes simpl
 database and unmasking the masked_ip and masked_device_id fields to their original value would be possible. 
 - Eventually, this script can be made available to analysts with the appropriate permissions, to execute and
 achieve the desired results.
+
 5. What are the assumptions you made?
 - Local Development Environment: The provided instructions assume a local development environment using Docker and 
 local instances of AWS SQS and Postgres.
