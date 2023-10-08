@@ -1,5 +1,5 @@
 ## Fetch Data Engineering Take-Home Assessment ##
-This application is designed to process user login behavior data from an AWS SQS queue, mask sensitive information, and store the results in a Postgres database. The application uses Docker containers for local development and testing, and is currently designed for local testing and deployment. This document consists of the pre-requisites for this application to run successfully locally, steps to run this application, and answers questions pertaining to selecting the right deployment tools, addressing potential challenges, and ensuring that the deployment aligns with organizational policies and best practices.
+This application is designed to process user login behavior data from an AWS SQS queue, mask sensitive information, and store the results in a Postgres database. The application uses Docker containers for local development and testing, and is currently designed for local testing and deployment. This document consists of the prerequisites for this application to run successfully locally, steps to run this application, and answers questions pertaining to selecting the right deployment tools, addressing potential challenges, and ensuring that the deployment aligns with organizational policies and best practices.
 
 This project is the solution for the Data Engineering assignment given in the below link:
 https://fetch-hiring.s3.amazonaws.com/data-engineer/pii-masking.pdf
@@ -29,12 +29,17 @@ docker-compose down
 ## Q and A ##
 4. How can PII be recovered later on?
 ```
-Since base64 encoding is reversible, creating a script that reads from the user_logins table in the Postgres database and unmasks the masked_ip and masked_device_id fields to their original value would be possible. Eventually, this script can be made available to analysts, with the appropriate permissions, to execute and achieve the desired results.
+Since base64 encoding is reversible, creating a script that reads from the user_logins table in the Postgres
+database and unmasking the masked_ip and masked_device_id fields to their original value would be possible. 
+Eventually, this script can be made available to analysts with the appropriate permissions, 
+to execute and achieve the desired results.
 ```
 5. What are the assumptions you made?
 ```
-Local Development Environment: The provided instructions assume a local development environment using Docker and local instances of AWS SQS and Postgres.
+Local Development Environment: The provided instructions assume a local development environment using Docker and 
+local instances of AWS SQS and Postgres.
 AWS CLI and Localstack: Assumed the availability of the AWS CLI and Localstack for local testing.
-Simplified PII Masking: The PII masking logic is simplified for demonstration purposes. We should probably consider more sophisticated PII masking techniques in a real-world scenario.
+Simplified PII Masking: The PII masking logic is simplified for demonstration purposes. We should probably consider more
+sophisticated PII masking techniques in a real-world scenario.
 ```
 
