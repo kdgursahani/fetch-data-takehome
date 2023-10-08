@@ -20,8 +20,15 @@ docker-compose up
 3. Navigate to the src folder within the repository, and run the code to test local access:
 ```bash
 python ./sqs_read_mask.py "http://localhost:4566/000000000000/login-queue"
+
 ```
 4. Navigate to the repository folder, and run the following command to stop the container, once data has been written to Postgres successfully:
 ```bash
 docker-compose down
 ```
+## Q and A ##
+5. What are the assumptions you made?
+Local Development Environment: The provided instructions assume a local development environment using Docker and local instances of AWS SQS and Postgres.
+AWS CLI and Localstack: Assumed the availability of the AWS CLI and Localstack for local testing.
+Simplified PII Masking: The PII masking logic is simplified for demonstration purposes. In a real-world scenario, we should probably consider more sophisticated PII masking techniques.
+
