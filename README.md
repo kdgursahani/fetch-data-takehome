@@ -28,7 +28,7 @@ docker-compose down
 ```
 ## Q and A ##
 5. What are the assumptions you made?
-```bash
+```
 Local Development Environment: The provided instructions assume a local development environment using Docker and local instances of AWS SQS and Postgres.
 AWS CLI and Localstack: Assumed the availability of the AWS CLI and Localstack for local testing.
 Simplified PII Masking: The PII masking logic is simplified for demonstration purposes. In a real-world scenario, we should probably consider more sophisticated PII masking techniques.
