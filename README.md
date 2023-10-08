@@ -25,7 +25,12 @@ docker-compose up
 python ./sqs_read_mask.py "http://localhost:4566/000000000000/login-queue"
 
 ```
-4. Navigate to the repository folder, and run the following command to stop the container, once data has been written to Postgres successfully:
+4. Connect to the Postgres database, and verify the table is created
+```bash
+psql -d postgres -U postgres -p 5432 -h localhost -W
+postgres=# select * from user_logins;
+```
+5. Navigate to the repository folder, and run the following command to stop the container, once data has been written to Postgres successfully:
 ```bash
 docker-compose down
 ```
