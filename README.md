@@ -31,28 +31,22 @@ docker-compose down
 ```
 ## Q and A ##
 1. How would you deploy this application in production?
-```
  - Ensure that the decoding of the base64 encoding retrieves the correct values for the IP and device_id fields.
- - The shared company repository that this script would eventually be a part of, should consist of a file that consists
-   of a callable method to create a connection to the Postgres database. This would reduce redundancy in code.
  - Within our development stage, we can investigate whether there are any tables negatively affected by the creation of the user_logins table. 
  - We should discuss with internal stakeholders to which this data is valuable, to understand its frequency of usage.
  - Kubernetes excels at orchestrating containers, providing a consistent environment for deploying, scaling, and managing containerized applications.
 Since the application is containerized or can be containerized, Kubernetes simplifies deployment and ensures consistent behavior across different environments.
-```
+
 4. How can PII be recovered later on?
-```
-Since base64 encoding is reversible, creating a script that reads from the user_logins table in the Postgres
+- Since base64 encoding is reversible, creating a script that reads from the user_logins table in the Postgres
 database and unmasking the masked_ip and masked_device_id fields to their original value would be possible. 
-Eventually, this script can be made available to analysts with the appropriate permissions, to execute and
+- Eventually, this script can be made available to analysts with the appropriate permissions, to execute and
 achieve the desired results.
-```
 5. What are the assumptions you made?
-```
 - Local Development Environment: The provided instructions assume a local development environment using Docker and 
 local instances of AWS SQS and Postgres.
 - AWS CLI and Localstack: Assumed the availability of the AWS CLI and Localstack for local testing.
 - Simplified PII Masking: The PII masking logic is simplified for demonstration purposes. We should probably consider more
 sophisticated PII masking techniques in a real-world scenario.
-```
+
 
