@@ -46,7 +46,7 @@ docker-compose down
    
 2. What other components would you want to add to make this production-ready?
  - If the process of connecting to the Postgres database is a frequent one, we can create a postgres_operations.py file
-   consists of the appropriate function to connect to Postgres.
+   which consists of the appropriate function to connect to Postgres.
  - This callable method can be used for other similar applications as well, within the company's shared repository.
    This would reduce redundancy in code.
  - As mentioned earlier, Kubernetes cluster would simplify deployment on a large scale.
